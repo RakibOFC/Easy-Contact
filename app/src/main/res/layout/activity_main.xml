@@ -34,10 +34,11 @@
             android:layout_gravity="bottom|end"
             android:layout_margin="@dimen/fab_margin"
             android:text="@string/add"
-            android:transitionName="activity_trans"
+            android:transitionName="@string/fab_to_contact_trans"
             app:icon="@android:drawable/ic_input_add"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent" />
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:ignore="UnusedAttribute" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

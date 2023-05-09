@@ -13,8 +13,9 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:transitionName="activity_trans"
-        tools:context=".views.ContactActivity">
+        android:transitionName="@string/fab_to_contact_trans"
+        tools:context=".views.ContactActivity"
+        tools:ignore="UnusedAttribute">
 
         <TextView
             android:layout_width="wrap_content"

@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.ActivityOptions;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.util.Pair;
 import android.view.View;
@@ -24,11 +25,12 @@ public class MainActivity extends AppCompatActivity {
 
             Intent contactIntent = new Intent(this, ContactActivity.class);
 
-            Pair[] pairs = new Pair[1];
-            pairs[0] = new Pair<View, String>(mBinding.fabBtnAdd, "activity_trans");
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                Pair<View, String> pairs = new Pair<>(mBinding.fabBtnAdd, getString(R.string.fab_to_contact_trans));
+                ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(MainActivity.this, pairs);
+                startActivity(contactIntent, options.toBundle());
 
-            ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(MainActivity.this, pairs);
-            startActivity(contactIntent, options.toBundle());
+            } else startActivity(contactIntent);
         });
     }
 }
