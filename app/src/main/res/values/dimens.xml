@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="user_logo_padding">3dp</dimen>
+    <dimen name="contact_logo_size">48dp</dimen>
+    <dimen name="contact_name_text_size">20sp</dimen>
+    <dimen name="contact_no_text_size">18sp</dimen>
+    <dimen name="item_contact_padding">10dp</dimen>
+    <dimen name="width_stroke">1dp</dimen>
+    <dimen name="text_padding">3dp</dimen>
+    <dimen name="def_padding">10dp</dimen>
+    <dimen name="def_radius">10dp</dimen>
+    <dimen name="contact_margin">5dp</dimen>
+    <dimen name="fab_margin">20dp</dimen>
+</resources>

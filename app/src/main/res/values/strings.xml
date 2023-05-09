@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Easy Contact</string>
+    <string name="user_logo">User Logo</string>
+    <string name="demo_name">Mohammad Ibrahim</string>
+    <string name="demo_no">+8801723456789</string>
+    <string name="add_contact">Add Contact</string>
+    <string name="add">Add</string>
+</resources>
