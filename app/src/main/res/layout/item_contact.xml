@@ -24,6 +24,7 @@
         android:paddingEnd="@dimen/def_padding">
 
         <TextView
+            android:id="@+id/tv_contact_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="@dimen/text_padding"
@@ -31,6 +32,7 @@
             android:textSize="@dimen/contact_name_text_size" />
 
         <TextView
+            android:id="@+id/tv_contact_no"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="@dimen/text_padding"
