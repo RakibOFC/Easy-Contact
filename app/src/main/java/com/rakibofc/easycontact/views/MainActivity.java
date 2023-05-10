@@ -1,10 +1,8 @@
 package com.rakibofc.easycontact.views;
 
-import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.content.res.ResourcesCompat;
 import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
 
 import android.app.ActivityOptions;
 import android.content.Intent;
@@ -17,6 +15,7 @@ import android.os.Bundle;
 
 import android.util.Pair;
 import android.view.View;
+import android.view.ViewTreeObserver;
 
 import com.rakibofc.easycontact.R;
 import com.rakibofc.easycontact.adapters.ContactItemAdapter;
@@ -55,7 +54,7 @@ public class MainActivity extends AppCompatActivity {
         mBinding.rvContacts.setLayoutManager(new LinearLayoutManager(this));
         mBinding.rvContacts.setAdapter(itemAdapter);
 
-        // Material design for scrolling
+        /* *
         mBinding.rvContacts.addOnScrollListener(new RecyclerView.OnScrollListener() {
             @Override
             public void onScrollStateChanged(@NonNull RecyclerView recyclerView, int newState) {
@@ -71,6 +70,30 @@ public class MainActivity extends AppCompatActivity {
                 } else {
                     mBinding.fabBtnAdd.shrink();
                 }
+            }
+        });
+        */
+
+        mBinding.nestedScrollView.getViewTreeObserver().addOnScrollChangedListener(new ViewTreeObserver.OnScrollChangedListener() {
+            private int oldScrollY = 0;
+
+            @Override
+            public void onScrollChanged() {
+
+                int scrollY = mBinding.nestedScrollView.getScrollY();
+
+                // Shrink FAB button when scrolling top to bottom, otherwise extend
+                if (scrollY > oldScrollY) {
+
+                    // Scrolling down
+                    mBinding.fabBtnAdd.shrink();
+
+                } else if (scrollY < oldScrollY) {
+
+                    // Scrolling up
+                    mBinding.fabBtnAdd.extend();
+                }
+                oldScrollY = scrollY;
             }
         });
 

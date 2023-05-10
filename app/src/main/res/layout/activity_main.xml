@@ -45,26 +45,33 @@
             </com.google.android.material.appbar.CollapsingToolbarLayout>
         </com.google.android.material.appbar.AppBarLayout>
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rv_contacts"
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/nested_scroll_view"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:padding="@dimen/rv_padding"
-            app:layout_behavior="@string/appbar_scrolling_view_behavior"
-            tools:listitem="@layout/item_contact" />
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_contacts"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/rv_padding"
+                tools:listitem="@layout/item_contact" />
+
+        </androidx.core.widget.NestedScrollView>
 
         <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
             android:id="@+id/fab_btn_add"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_margin="@dimen/fab_margin"
-            android:backgroundTint="@color/purple_500"
             android:text="@string/add"
             android:textColor="@color/white"
             android:transitionName="@string/fab_to_contact_trans"
+            app:backgroundTint="?attr/colorPrimary"
             app:icon="@android:drawable/ic_input_add"
             app:iconTint="@color/white"
-            app:layout_anchor="@id/rv_contacts"
+            app:layout_anchor="@id/nested_scroll_view"
             app:layout_anchorGravity="bottom|end"
             tools:ignore="UnusedAttribute" />
 
