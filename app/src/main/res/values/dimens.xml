@@ -13,4 +13,5 @@
     <dimen name="fab_margin">16dp</dimen>
     <dimen name="rv_padding">5dp</dimen>
     <dimen name="app_bar_height">180dp</dimen>
+    <dimen name="def_margin">10dp</dimen>
 </resources>

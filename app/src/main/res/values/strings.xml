@@ -7,4 +7,5 @@
     <string name="add">Add</string>
     <string name="fab_to_contact_trans">FabToContact</string>
     <string name="about">About</string>
+    <string name="search_hint">Search name or phone…</string>
 </resources>
