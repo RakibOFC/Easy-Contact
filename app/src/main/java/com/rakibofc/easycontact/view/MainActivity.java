@@ -6,6 +6,8 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 
 import android.app.ActivityOptions;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Build;
 import android.os.Bundle;
 
@@ -16,9 +18,12 @@ import android.view.ViewTreeObserver;
 import com.rakibofc.easycontact.R;
 import com.rakibofc.easycontact.adapter.ContactItemAdapter;
 import com.rakibofc.easycontact.databinding.ActivityMainBinding;
+import com.rakibofc.easycontact.model.ContactData;
 import com.rakibofc.easycontact.model.ContactDbTable;
-import com.rakibofc.easycontact.util.RoomDbHelper;
 import com.rakibofc.easycontact.viewmodel.MainViewModel;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -35,12 +40,24 @@ public class MainActivity extends AppCompatActivity {
         // Set content view
         setContentView(mBinding.getRoot());
 
-        mainViewModel.getContactList().observe(this, contactList -> {
+        mainViewModel.getAllContacts().observe(this, contactDbTables -> {
 
-            ContactItemAdapter contactItemAdapter = new ContactItemAdapter(this, contactList);
+            List<ContactData> contactDataItems = new ArrayList<>();
+
+            for (ContactDbTable contactDbTable : contactDbTables) {
+                contactDataItems.add(new ContactData(
+                        getContactImage(contactDbTable.getContactPhoto()),
+                        contactDbTable.getContactName(),
+                        contactDbTable.getContactNo()));
+
+            }
+
+            ContactItemAdapter contactItemAdapter = new ContactItemAdapter(this, contactDataItems);
             mBinding.rvContacts.setLayoutManager(new LinearLayoutManager(this));
             mBinding.rvContacts.setAdapter(contactItemAdapter);
         });
+
+        // mainViewModel.addContact(new ContactDbTable(null, "Yamin Hasan", "+8801231232232"));
 
         /* * // This code section for FAB Button interact with RecyclerView
         mBinding.rvContacts.addOnScrollListener(new RecyclerView.OnScrollListener() {
@@ -97,5 +114,9 @@ public class MainActivity extends AppCompatActivity {
 
             } else startActivity(contactIntent);
         });
+    }
+
+    private Bitmap getContactImage(byte[] contactPhoto) {
+        return BitmapFactory.decodeResource(this.getResources(), R.drawable.user_256dp);
     }
 }

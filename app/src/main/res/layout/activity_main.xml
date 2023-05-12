@@ -54,6 +54,8 @@
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
                 android:orientation="vertical">
 
                 <EditText
@@ -66,6 +68,7 @@
                     android:autofillHints="phone"
                     android:background="@drawable/edit_text_bg"
                     android:hint="@string/search_hint"
+                    android:imeOptions="actionSearch"
                     android:inputType="text" />
 
                 <androidx.recyclerview.widget.RecyclerView

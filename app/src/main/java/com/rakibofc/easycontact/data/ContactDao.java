@@ -1,15 +1,16 @@
 package com.rakibofc.easycontact.data;
 
 import androidx.lifecycle.LiveData;
+import androidx.room.Dao;
 import androidx.room.Insert;
 import androidx.room.OnConflictStrategy;
 import androidx.room.Query;
 
-import com.rakibofc.easycontact.model.ContactData;
 import com.rakibofc.easycontact.model.ContactDbTable;
 
 import java.util.List;
 
+@Dao
 public interface ContactDao {
 
     // CRUD - Create, Read, Update, Delete
@@ -19,6 +20,9 @@ public interface ContactDao {
     @Query("DELETE FROM contact_table")
     void deleteAll();
 
-    @Query("SELECT * FROM contact_table ORDER BY contact_name ASC")
+    @Query("SELECT * FROM contact_table")
     LiveData<List<ContactDbTable>> getAllContacts();
+
+    @Query("SELECT * FROM contact_table")
+    List<ContactDbTable> getContactList();
 }
