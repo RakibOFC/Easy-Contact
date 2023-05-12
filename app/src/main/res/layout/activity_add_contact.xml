@@ -7,14 +7,14 @@
 
         <variable
             name="contactViewModel"
-            type="com.rakibofc.easycontact.viewmodels.ContactViewModel" />
+            type="com.rakibofc.easycontact.viewmodel.AddContactViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:transitionName="@string/fab_to_contact_trans"
-        tools:context=".views.ContactActivity"
+        tools:context=".view.AddContactActivity"
         tools:ignore="UnusedAttribute">
 
         <TextView

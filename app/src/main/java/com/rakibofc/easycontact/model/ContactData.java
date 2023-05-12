@@ -1,4 +1,4 @@
-package com.rakibofc.easycontact.models;
+package com.rakibofc.easycontact.model;
 
 import android.graphics.Bitmap;
 

@@ -1,4 +1,4 @@
-package com.rakibofc.easycontact.adapters;
+package com.rakibofc.easycontact.adapter;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -11,7 +11,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.rakibofc.easycontact.R;
-import com.rakibofc.easycontact.models.ContactData;
+import com.rakibofc.easycontact.model.ContactData;
 
 import java.util.List;
 

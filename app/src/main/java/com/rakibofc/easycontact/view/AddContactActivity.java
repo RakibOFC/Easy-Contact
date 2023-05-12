@@ -1,4 +1,4 @@
-package com.rakibofc.easycontact.views;
+package com.rakibofc.easycontact.view;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -6,11 +6,11 @@ import android.os.Bundle;
 
 import com.rakibofc.easycontact.R;
 
-public class ContactActivity extends AppCompatActivity {
+public class AddContactActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_contact);
+        setContentView(R.layout.activity_add_contact);
     }
 }

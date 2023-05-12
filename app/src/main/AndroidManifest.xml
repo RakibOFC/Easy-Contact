@@ -12,10 +12,10 @@
         android:theme="@style/Theme.EasyContact"
         tools:targetApi="31">
         <activity
-            android:name=".views.ContactActivity"
+            android:name=".view.AddContactActivity"
             android:exported="false" />
         <activity
-            android:name=".views.MainActivity"
+            android:name=".view.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
