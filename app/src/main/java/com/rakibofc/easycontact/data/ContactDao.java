@@ -20,9 +20,6 @@ public interface ContactDao {
     @Query("DELETE FROM contact_table")
     void deleteAll();
 
-    @Query("SELECT * FROM contact_table")
+    @Query("SELECT * FROM contact_table ORDER BY contact_name ASC")
     LiveData<List<ContactDbTable>> getAllContacts();
-
-    @Query("SELECT * FROM contact_table")
-    List<ContactDbTable> getContactList();
 }
