@@ -1,6 +1,7 @@
 package com.rakibofc.easycontact.view;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
@@ -12,8 +13,11 @@ import android.os.Build;
 import android.os.Bundle;
 
 import android.util.Pair;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewTreeObserver;
+import android.widget.Toast;
 
 import com.rakibofc.easycontact.R;
 import com.rakibofc.easycontact.adapter.ContactItemAdapter;
@@ -102,6 +106,16 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        mBinding.toolbar.setOnMenuItemClickListener(item -> {
+
+            if (item.getItemId() == R.id.delete_all) {
+                Toast.makeText(this, "Delete All", Toast.LENGTH_SHORT).show();
+            } else if (item.getItemId() == R.id.about) {
+                Toast.makeText(this, "About", Toast.LENGTH_SHORT).show();
+            }
+            return false;
+        });
+
         // Fab button click listener
         mBinding.fabBtnAdd.setOnClickListener(v -> {
 
@@ -117,6 +131,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private Bitmap getContactImage(byte[] contactPhoto) {
-        return BitmapFactory.decodeResource(this.getResources(), R.drawable.user_256dp);
+        return BitmapFactory.decodeResource(this.getResources(), R.drawable.user_64dp);
     }
 }

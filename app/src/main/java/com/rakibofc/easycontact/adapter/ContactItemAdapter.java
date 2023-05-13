@@ -17,8 +17,8 @@ import java.util.List;
 
 public class ContactItemAdapter extends RecyclerView.Adapter<ContactItemAdapter.ViewHolder> {
 
-    private Context context;
-    private List<ContactData> contactDataItems;
+    private final Context context;
+    private final List<ContactData> contactDataItems;
 
     public ContactItemAdapter(Context context, List<ContactData> contactDataItems) {
 
