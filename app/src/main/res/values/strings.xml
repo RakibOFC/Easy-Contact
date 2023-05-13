@@ -9,4 +9,5 @@
     <string name="about">About</string>
     <string name="search_hint">Search name or phone</string>
     <string name="delete_all">Delete All</string>
+    <string name="all_contacts_delete_msg">All contacts have been deleted</string>
 </resources>

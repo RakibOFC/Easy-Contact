@@ -61,6 +61,20 @@ public class MainActivity extends AppCompatActivity {
             mBinding.rvContacts.setAdapter(contactItemAdapter);
         });
 
+        // Menu bar item click listener
+        mBinding.toolbar.setOnMenuItemClickListener(item -> {
+
+            if (item.getItemId() == R.id.delete_all) {
+
+                mainViewModel.deleteAllContact();
+                Toast.makeText(this, R.string.all_contacts_delete_msg, Toast.LENGTH_SHORT).show();
+
+            } else if (item.getItemId() == R.id.about) {
+                Toast.makeText(this, "About", Toast.LENGTH_SHORT).show();
+            }
+            return false;
+        });
+
         // mainViewModel.addContact(new ContactDbTable(null, "Yamin Hasan", "+8801231232232"));
 
         /* * // This code section for FAB Button interact with RecyclerView
@@ -104,16 +118,6 @@ public class MainActivity extends AppCompatActivity {
                 }
                 oldScrollY = scrollY;
             }
-        });
-
-        mBinding.toolbar.setOnMenuItemClickListener(item -> {
-
-            if (item.getItemId() == R.id.delete_all) {
-                Toast.makeText(this, "Delete All", Toast.LENGTH_SHORT).show();
-            } else if (item.getItemId() == R.id.about) {
-                Toast.makeText(this, "About", Toast.LENGTH_SHORT).show();
-            }
-            return false;
         });
 
         // Fab button click listener

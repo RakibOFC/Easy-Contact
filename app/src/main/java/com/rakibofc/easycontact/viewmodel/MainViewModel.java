@@ -37,4 +37,8 @@ public class MainViewModel extends AndroidViewModel {
     public void addContact(ContactDbTable contact) {
         contactDao.insert(contact);
     }
+
+    public void deleteAllContact() {
+        contactDao.deleteAll();
+    }
 }
