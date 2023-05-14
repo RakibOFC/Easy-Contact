@@ -14,4 +14,8 @@
     <dimen name="rv_padding">5dp</dimen>
     <dimen name="app_bar_height">180dp</dimen>
     <dimen name="def_margin">10dp</dimen>
+    <dimen name="add_image_size">100dp</dimen>
+    <dimen name="et_padding">12dp</dimen>
+    <dimen name="drawable_padding">12dp</dimen>
+    <dimen name="btn_padding">12dp</dimen>
 </resources>

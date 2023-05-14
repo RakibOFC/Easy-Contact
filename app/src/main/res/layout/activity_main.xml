@@ -60,13 +60,11 @@
 
                 <EditText
                     android:id="@+id/et_search_contact"
+                    style="@style/EditTextStyle"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="@dimen/def_margin"
-                    android:layout_marginTop="@dimen/def_margin"
-                    android:layout_marginEnd="@dimen/def_margin"
                     android:autofillHints="phone"
-                    android:background="@drawable/edit_text_bg"
+                    android:drawableStart="@drawable/baseline_search_24"
                     android:hint="@string/search_hint"
                     android:imeOptions="actionSearch"
                     android:inputType="text" />

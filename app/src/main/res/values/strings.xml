@@ -5,9 +5,14 @@
     <string name="demo_no">+8801723456789</string>
     <string name="add_contact">Add Contact</string>
     <string name="add">Add</string>
-    <string name="fab_to_contact_trans">FabToContact</string>
+    <string name="fab_to_contact_trans">FabToAddContact</string>
     <string name="about">About</string>
     <string name="search_hint">Search name or phone</string>
     <string name="delete_all">Delete All</string>
     <string name="all_contacts_delete_msg">All contacts have been deleted</string>
+    <string name="add_photo">Add Photo</string>
+    <string name="name">Name</string>
+    <string name="phone">Phone</string>
+    <string name="cancel">Cancel</string>
+    <string name="save">Save</string>
 </resources>
