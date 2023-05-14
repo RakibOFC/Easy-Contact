@@ -19,11 +19,17 @@ public class ContactItemAdapter extends RecyclerView.Adapter<ContactItemAdapter.
 
     private final Context context;
     private final List<ContactData> contactDataItems;
+    private final OnItemClickListener listener;
 
-    public ContactItemAdapter(Context context, List<ContactData> contactDataItems) {
+    public ContactItemAdapter(Context context, List<ContactData> contactDataItems, OnItemClickListener listener) {
 
         this.context = context;
         this.contactDataItems = contactDataItems;
+        this.listener = listener;
+    }
+
+    public interface OnItemClickListener {
+        void onItemClick(ContactData item);
     }
 
     @NonNull
@@ -38,7 +44,7 @@ public class ContactItemAdapter extends RecyclerView.Adapter<ContactItemAdapter.
     public void onBindViewHolder(@NonNull ContactItemAdapter.ViewHolder holder, int position) {
 
         ContactData contactData = contactDataItems.get(position);
-        holder.bind(contactData);
+        holder.bind(contactData, listener);
     }
 
     @Override
@@ -60,11 +66,13 @@ public class ContactItemAdapter extends RecyclerView.Adapter<ContactItemAdapter.
             tvContactNo = itemView.findViewById(R.id.tv_contact_no);
         }
 
-        public void bind(ContactData contactData) {
+        public void bind(final ContactData contactData, final OnItemClickListener listener) {
 
             ivContactImage.setImageBitmap(contactData.getContactImage());
             tvContactName.setText(contactData.getContactName());
             tvContactNo.setText(contactData.getContactNumber());
+
+            itemView.setOnClickListener(v -> listener.onItemClick(contactData));
         }
     }
 }

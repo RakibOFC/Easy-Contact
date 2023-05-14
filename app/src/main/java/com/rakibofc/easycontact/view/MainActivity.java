@@ -11,6 +11,7 @@ import android.graphics.BitmapFactory;
 import android.os.Build;
 import android.os.Bundle;
 
+import android.util.Log;
 import android.util.Pair;
 import android.view.View;
 import android.view.ViewTreeObserver;
@@ -26,7 +27,7 @@ import com.rakibofc.easycontact.viewmodel.MainViewModel;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements ContactItemAdapter.OnItemClickListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -53,7 +54,7 @@ public class MainActivity extends AppCompatActivity {
 
             }
 
-            ContactItemAdapter contactItemAdapter = new ContactItemAdapter(this, contactDataItems);
+            ContactItemAdapter contactItemAdapter = new ContactItemAdapter(this, contactDataItems, this);
             mBinding.rvContacts.setLayoutManager(new LinearLayoutManager(this));
             mBinding.rvContacts.setAdapter(contactItemAdapter);
         });
@@ -136,5 +137,10 @@ public class MainActivity extends AppCompatActivity {
         return contactPhoto != null ?
                 BitmapFactory.decodeByteArray(contactPhoto, 0, contactPhoto.length) :
                 BitmapFactory.decodeResource(this.getResources(), R.drawable.user_64dp);
+    }
+
+    @Override
+    public void onItemClick(ContactData item) {
+        Log.e("Name", item.getContactName() + ", Phone: " + item.getContactNumber());
     }
 }
