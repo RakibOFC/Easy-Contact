@@ -36,21 +36,21 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:transitionName="@string/fab_to_contact_trans"
             app:layout_behavior="@string/appbar_scrolling_view_behavior"
-            tools:context=".view.AddContactActivity"
-            tools:ignore="UnusedAttribute">
+            tools:context=".view.AddContactActivity">
 
             <com.google.android.material.imageview.ShapeableImageView
                 android:id="@+id/iv_add_photo"
                 android:layout_width="@dimen/add_image_size"
                 android:layout_height="@dimen/add_image_size"
                 android:layout_centerHorizontal="true"
+                android:transitionName="@string/fab_to_contact_trans"
                 android:layout_marginTop="@dimen/def_margin"
                 android:contentDescription="@string/add_photo"
                 android:scaleType="centerCrop"
                 android:src="@drawable/add_photo"
-                app:shapeAppearanceOverlay="@style/CircleImageView" />
+                app:shapeAppearanceOverlay="@style/CircleImageView"
+                tools:ignore="UnusedAttribute" />
 
             <EditText
                 android:id="@+id/et_add_name"

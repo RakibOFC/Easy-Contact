@@ -48,6 +48,7 @@ public class MainActivity extends AppCompatActivity implements ContactItemAdapte
 
             for (ContactDbTable contactDbTable : contactDbTables) {
                 contactDataItems.add(new ContactData(
+                        contactDbTable.getContactId(),
                         getContactImage(contactDbTable.getContactPhoto()),
                         contactDbTable.getContactName(),
                         contactDbTable.getContactNo()));
@@ -141,6 +142,6 @@ public class MainActivity extends AppCompatActivity implements ContactItemAdapte
 
     @Override
     public void onItemClick(ContactData item) {
-        Log.e("Name", item.getContactName() + ", Phone: " + item.getContactNumber());
+        Log.e("ID", item.getContactId() + "\nName: " + item.getContactName() + ", Phone: " + item.getContactNumber());
     }
 }

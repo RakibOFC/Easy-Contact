@@ -46,8 +46,6 @@ public class AddContactActivity extends AppCompatActivity {
 
             // Set image in ImageView
             binding.ivAddPhoto.setImageBitmap(contactImageBitmap);
-
-            Toast.makeText(this, "Here", Toast.LENGTH_SHORT).show();
         });
 
         binding.toolbar.setNavigationOnClickListener(v -> {

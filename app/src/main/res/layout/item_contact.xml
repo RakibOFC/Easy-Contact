@@ -4,9 +4,10 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="@dimen/contact_margin"
-    android:background="@drawable/item_contact_bg"
+    android:background="@drawable/rounded_corners_selector"
     android:orientation="horizontal"
     android:padding="@dimen/item_contact_padding">
+    <!-- android:background="@drawable/item_contact_bg" -->
 
     <com.google.android.material.imageview.ShapeableImageView
         android:id="@+id/iv_user_logo"
