@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
@@ -9,81 +10,107 @@
             type="com.rakibofc.easycontact.viewmodel.AddContactViewModel" />
     </data>
 
-    <RelativeLayout
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:transitionName="@string/fab_to_contact_trans"
-        tools:context=".view.AddContactActivity"
-        tools:ignore="UnusedAttribute">
+        android:fitsSystemWindows="true"
+        tools:context=".view.MainActivity">
 
-        <ImageButton
-            android:id="@+id/iv_add_photo"
-            android:layout_width="@dimen/add_image_size"
-            android:layout_height="@dimen/add_image_size"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="@dimen/def_margin"
-            android:background="?attr/selectableItemBackground"
-            android:contentDescription="@string/add_photo"
-            android:scaleType="fitCenter"
-            android:src="@drawable/add_photo" />
-
-        <EditText
-            android:id="@+id/et_add_name"
-            style="@style/EditTextStyle"
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/app_bar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/iv_add_photo"
-            android:layout_centerHorizontal="true"
-            android:autofillHints="name"
-            android:drawableStart="@drawable/baseline_person_outline_24"
-            android:hint="@string/name"
-            android:imeOptions="actionNext"
-            android:inputType="textPersonName" />
+            android:fitsSystemWindows="true">
 
-        <EditText
-            android:id="@+id/et_add_phone"
-            style="@style/EditTextStyle"
+            <com.google.android.material.appbar.MaterialToolbar
+                android:id="@+id/toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                app:navigationIcon="?attr/homeAsUpIndicator"
+                app:navigationIconTint="@color/white"
+                app:title="@string/add_contact"
+                app:titleTextColor="@color/white" />
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/et_add_name"
-            android:layout_centerHorizontal="true"
-            android:autofillHints="phone"
-            android:drawableStart="@drawable/baseline_phone_24"
-            android:hint="@string/phone"
-            android:imeOptions="actionDone"
-            android:inputType="phone" />
+            android:transitionName="@string/fab_to_contact_trans"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"
+            tools:context=".view.AddContactActivity"
+            tools:ignore="UnusedAttribute">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:gravity="center"
-            android:orientation="horizontal">
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/iv_add_photo"
+                android:layout_width="@dimen/add_image_size"
+                android:layout_height="@dimen/add_image_size"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="@dimen/def_margin"
+                android:contentDescription="@string/add_photo"
+                android:scaleType="centerCrop"
+                android:src="@drawable/add_photo"
+                app:shapeAppearanceOverlay="@style/CircleImageView" />
 
-            <Button
-                android:id="@+id/btn_cancel"
-                style="?android:attr/buttonBarButtonStyle"
-                android:layout_width="wrap_content"
+            <EditText
+                android:id="@+id/et_add_name"
+                style="@style/EditTextStyle"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="@dimen/def_margin"
-                android:layout_weight="1"
-                android:padding="@dimen/btn_padding"
-                android:text="@string/cancel"
-                android:textAllCaps="false" />
+                android:layout_below="@+id/iv_add_photo"
+                android:layout_centerHorizontal="true"
+                android:autofillHints="name"
+                android:drawableStart="@drawable/baseline_person_outline_24"
+                android:hint="@string/name"
+                android:imeOptions="actionNext"
+                android:inputType="textPersonName" />
 
-            <Button
-                android:id="@+id/btn_save"
-                style="?android:attr/buttonBarButtonStyle"
-                android:layout_width="wrap_content"
+            <EditText
+                android:id="@+id/et_add_phone"
+                style="@style/EditTextStyle"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="@dimen/def_margin"
-                android:layout_weight="1"
-                android:padding="@dimen/btn_padding"
-                android:text="@string/save"
-                android:textAllCaps="false" />
+                android:layout_below="@+id/et_add_name"
+                android:layout_centerHorizontal="true"
+                android:autofillHints="phone"
+                android:drawableStart="@drawable/baseline_phone_24"
+                android:hint="@string/phone"
+                android:imeOptions="actionDone"
+                android:inputType="phone" />
 
-        </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:gravity="center"
+                android:orientation="horizontal">
 
-    </RelativeLayout>
+                <Button
+                    android:id="@+id/btn_cancel"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/def_margin"
+                    android:layout_weight="1"
+                    android:padding="@dimen/btn_padding"
+                    android:text="@string/cancel"
+                    android:textAllCaps="false" />
+
+                <Button
+                    android:id="@+id/btn_save"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/def_margin"
+                    android:layout_weight="1"
+                    android:padding="@dimen/btn_padding"
+                    android:text="@string/save"
+                    android:textAllCaps="false" />
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
 
 </layout>

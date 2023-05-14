@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="@dimen/contact_margin"
@@ -7,14 +8,15 @@
     android:orientation="horizontal"
     android:padding="@dimen/item_contact_padding">
 
-    <ImageView
+    <com.google.android.material.imageview.ShapeableImageView
         android:id="@+id/iv_user_logo"
         android:layout_width="@dimen/contact_logo_size"
         android:layout_height="@dimen/contact_logo_size"
         android:layout_gravity="center"
-        android:background="@drawable/contact_logo_bg"
         android:contentDescription="@string/user_logo"
-        android:src="@drawable/user_64dp" />
+        android:scaleType="centerCrop"
+        android:src="@drawable/user_64dp"
+        app:shapeAppearanceOverlay="@style/CircleImageView" />
 
     <LinearLayout
         android:layout_width="wrap_content"

@@ -1,7 +1,6 @@
 package com.rakibofc.easycontact.view;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
@@ -13,8 +12,6 @@ import android.os.Build;
 import android.os.Bundle;
 
 import android.util.Pair;
-import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewTreeObserver;
 import android.widget.Toast;
@@ -135,6 +132,9 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private Bitmap getContactImage(byte[] contactPhoto) {
-        return BitmapFactory.decodeResource(this.getResources(), R.drawable.user_64dp);
+
+        return contactPhoto != null ?
+                BitmapFactory.decodeByteArray(contactPhoto, 0, contactPhoto.length) :
+                BitmapFactory.decodeResource(this.getResources(), R.drawable.user_64dp);
     }
 }

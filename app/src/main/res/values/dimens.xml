@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <dimen name="user_logo_padding">0dp</dimen>
+    <dimen name="user_logo_padding">1dp</dimen>
     <dimen name="contact_logo_size">48dp</dimen>
     <dimen name="contact_name_text_size">20sp</dimen>
     <dimen name="contact_no_text_size">18sp</dimen>
